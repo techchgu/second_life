@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>List Bulk Material | Second Life AI</title>
+  <link rel="stylesheet" href="css/bulk.css">
+</head>
+<body data-page="listing-form">
+  <header class="topbar">
+    <a class="brand" href="index.html">♻ Second Life AI</a>
+    <nav>
+      <a href="bulk-marketplace.html">Marketplace</a>
+      <a href="bulk-requirements.html">Post Requirement</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+  </header>
+
+  <main class="form-container">
+    <a class="back-link" href="bulk-marketplace.html">← Back to marketplace</a>
+    <section class="panel form-panel">
+      <span class="eyebrow">SELLER PORTAL</span>
+      <h1>List Bulk Material</h1>
+      <p>Publish surplus, reusable or recycled materials for business buyers.</p>
+
+      <form id="bulkListingForm">
+        <label>Material name *
+          <input name="name" required maxlength="120" placeholder="e.g. Recycled PET granules">
+        </label>
+
+        <div class="form-row">
+          <label>Category *
+            <select name="category" required>
+              <option value="">Choose category</option>
+              <option>Metals</option><option>Plastics</option>
+              <option>Paper</option><option>Electronics</option>
+              <option>Textiles</option><option>Wood</option>
+              <option>Industrial Components</option><option>Other</option>
+            </select>
+          </label>
+          <label>Condition *
+            <select name="condition" required>
+              <option value="">Choose condition</option>
+              <option>New</option><option>Reusable</option>
+              <option>Recycled</option><option>Surplus</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>Available quantity *
+            <input name="quantity" type="number" min="0.001" step="any" required>
+          </label>
+          <label>Unit *
+            <select name="unit" required>
+              <option>kg</option><option>tonnes</option><option>litres</option>
+              <option>pieces</option><option>metres</option><option>rolls</option>
+              <option>bags</option><option>pallets</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>Price per unit (₹)
+            <input name="price" type="number" min="0" step="any" placeholder="Leave blank if negotiable">
+          </label>
+          <label>Minimum order *
+            <input name="minOrder" type="number" min="0.001" step="any" required>
+          </label>
+        </div>
+
+        <label>
+          <input type="checkbox" name="negotiable" value="true">
+          Price is negotiable
+        </label>
+
+        <label>Description and specifications *
+          <textarea name="description" required maxlength="3000" rows="4"
+            placeholder="Grade, quality, size, packaging, material specifications…"></textarea>
+        </label>
+
+        <div class="form-row">
+          <label>Business name *
+            <input name="company" required maxlength="150">
+          </label>
+          <label>Pickup / delivery location *
+            <input name="location" required maxlength="150" placeholder="City, state">
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>Delivery option *
+            <select name="delivery" required>
+              <option value="Pickup">Buyer pickup</option>
+              <option value="Delivery available">Delivery available</option>
+              <option value="Negotiable">Discuss with buyer</option>
+            </select>
+          </label>
+          <label>Image URL (optional)
+            <input name="imageUrl" type="url" placeholder="https://…">
+          </label>
+        </div>
+
+        <label>Preferred contact method *
+          <select name="contactMethod" required>
+            <option value="platform">Platform inquiry</option>
+            <option value="email">Email after consent</option>
+            <option value="phone">Phone after consent</option>
+          </select>
+        </label>
+
+        <button class="btn primary full" type="submit">Publish Bulk Listing</button>
+        <p id="listingFormMessage" class="form-message" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/bulk.js"></script>
+</body>
+</html>

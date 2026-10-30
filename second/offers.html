@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#078260">
+
+  <title>Offers | Second Life AI</title>
+  <meta name="description" content="Make a fair offer and negotiate with sellers on Second Life AI.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/offers.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="offers-page">
+
+  <!-- SAME NAVBAR STRUCTURE AS MARKETPLACE -->
+  <header class="site-header offers-header">
+    <div class="container header-inner offers-header-inner">
+
+      <a class="brand offers-brand" href="index.html">
+        <span class="brand-mark">S</span>
+        <span class="offers-brand-name">
+          Second Life AI
+          <small>REUSE. RESELL. REIMAGINE.</small>
+        </span>
+      </a>
+
+      <form class="offers-nav-search" action="browse.html" method="get">
+        <span class="offers-search-icon" aria-hidden="true">⌕</span>
+        <input
+          type="search"
+          name="q"
+          placeholder="Search products, categories..."
+          aria-label="Search products"
+        >
+        <button type="submit">Search</button>
+      </form>
+
+      <nav class="offers-main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="browse.html">Marketplace</a>
+        <a href="bulk-marketplace.html">Bulk Marketplace</a>
+        <a href="matching.html">AI Matching</a>
+        <a href="offers.html" class="active" aria-current="page">Offers</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+
+      <div class="offers-nav-actions">
+        <a href="login.html" class="offers-login-btn">Log in</a>
+        <a href="signup.html" class="offers-join-btn">Join Free ↗</a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="container offers-main">
+
+    <!-- PAGE INTRO -->
+    <section class="offers-hero">
+      <div class="offers-hero-content">
+        <span class="offers-eyebrow">
+          <span class="offers-eyebrow-dot"></span>
+          NEGOTIATE FAIRLY
+        </span>
+
+        <h1>Make a fair <span>offer.</span></h1>
+
+        <p>
+          Found something useful? Send the seller an offer and
+          start a conversation about a price that works for both.
+        </p>
+
+        <div class="offers-hero-points">
+          <span>✓ Fair negotiation</span>
+          <span>✓ Clear communication</span>
+          <span>✓ Reuse more</span>
+        </div>
+      </div>
+
+      <div class="offers-hero-art" aria-hidden="true">
+        <div class="offers-art-circle"></div>
+        <div class="offers-art-card">
+          <span class="offers-art-tag">YOUR OFFER</span>
+          <div class="offers-art-rupee">₹</div>
+          <div class="offers-art-lines">
+            <i></i>
+            <i></i>
+            <i></i>
+          </div>
+          <div class="offers-art-check">✓</div>
+        </div>
+        <span class="offers-art-spark spark-a">✦</span>
+        <span class="offers-art-spark spark-b">✧</span>
+      </div>
+    </section>
+
+    <!-- OFFER FORM -->
+    <section class="offers-layout">
+
+      <div class="offers-form-card">
+        <div class="offers-section-heading">
+          <span class="offers-heading-icon">₹</span>
+          <div>
+            <h2>Submit your offer</h2>
+            <p>Choose a listed product and enter your proposed price.</p>
+          </div>
+        </div>
+
+        <form id="offerForm" class="form-panel offers-form">
+
+          <label for="offerProduct">Product</label>
+          <select id="offerProduct" class="field" required>
+            <option value="">Choose a product</option>
+          </select>
+
+          <label for="offerAmount">Your offer (₹)</label>
+          <input
+            id="offerAmount"
+            class="field"
+            type="number"
+            min="1"
+            step="1"
+            placeholder="e.g. 1500"
+            required
+          >
+
+          <label for="offerMessage">Message to seller <span>(optional)</span></label>
+          <textarea
+            id="offerMessage"
+            class="field"
+            rows="4"
+            maxlength="500"
+            placeholder="Write a short message to the seller..."
+          ></textarea>
+
+          <button class="btn btn-primary offers-submit-btn" type="submit">
+            Send Offer <span aria-hidden="true">↗</span>
+          </button>
+
+          <p id="offerStatus" class="offers-status" role="status" aria-live="polite"></p>
+
+          <p class="offers-form-note">
+            Please submit a genuine offer. The seller may accept or decline it.
+          </p>
+        </form>
+      </div>
+
+      <!-- HELPFUL INFO -->
+      <aside class="offers-info-card">
+        <div class="offers-info-icon">✦</div>
+        <h3>Make your offer count</h3>
+        <p>Keep your offer clear, realistic and respectful.</p>
+
+        <ul>
+          <li><span>1</span> Choose the right product.</li>
+          <li><span>2</span> Enter the price you can pay.</li>
+          <li><span>3</span> Add a message if needed.</li>
+          <li><span>4</span> Submit and track your offer below.</li>
+        </ul>
+
+        <div class="offers-info-note">
+          <strong>Good to know</strong>
+          <p>Submitting an offer does not guarantee that the seller will accept it.</p>
+        </div>
+      </aside>
+
+    </section>
+
+    <!-- SUBMITTED OFFERS -->
+    <section class="my-offers-section">
+      <div class="my-offers-heading">
+        <div>
+          <span class="offers-eyebrow">YOUR ACTIVITY</span>
+          <h2>My submitted offers</h2>
+          <p>Review offers saved in this browser.</p>
+        </div>
+        <span class="my-offers-count" id="myOffersCount">0 offers</span>
+      </div>
+
+      <div id="myOffers" class="content-list offers-list"></div>
+    </section>
+
+  </main>
+
+<!-- SECOND LIFE AI - PREMIUM FOOTER -->
+<footer class="sl-footer">
+
+  <div class="sl-footer-main">
+
+    <!-- Brand and description -->
+    <div class="sl-footer-brand">
+
+      <a class="sl-footer-logo" href="index.html">
+        <span class="sl-footer-logo-icon">S</span>
+        <span>
+          Second Life <span class="sl-footer-green">AI</span>
+          <small>REUSE. RESELL. REIMAGINE.</small>
+        </span>
+      </a>
+
+      <p>
+        Give useful products a second life. Discover reusable items,
+        connect with sellers and turn surplus into opportunity.
+      </p>
+
+      <a href="browse.html" class="sl-footer-cta">
+        Explore Marketplace <span>→</span>
+      </a>
+
+    </div>
+
+    <!-- Explore links -->
+    <div class="sl-footer-column">
+      <h3>Explore</h3>
+      <a href="browse.html">Marketplace</a>
+      <a href="bulk-marketplace.html">Bulk Marketplace</a>
+      <a href="matching.html">AI Matching</a>
+      <a href="offers.html">Make an Offer</a>
+    </div>
+
+    <!-- Marketplace links -->
+    <div class="sl-footer-column">
+      <h3>Marketplace</h3>
+      <a href="add-listing.html">Sell an Item</a>
+      <a href="saved.html">Saved Products</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">My Profile</a>
+    </div>
+
+    <!-- Account links -->
+    <div class="sl-footer-column">
+      <h3>Your Account</h3>
+      <a href="login.html">Log In</a>
+      <a href="signup.html">Create Account</a>
+      <a href="notifications.html">Notifications</a>
+      <a href="messages.html">Messages</a>
+    </div>
+
+  </div>
+
+  <!-- Bottom footer -->
+  <div class="sl-footer-bottom">
+
+    <p>
+      © 2026 Second Life AI. All rights reserved.
+    </p>
+
+    <p class="sl-footer-tagline">
+      Built for a more circular future <span>↗</span>
+    </p>
+
+    <a href="index.html" class="sl-footer-back-top">
+      Back to top ↑
+    </a>
+
+  </div>
+
+</footer>
+
+
+  <script src="js/data.js"></script>
+  <script src="js/marketplace.js"></script>
+  <script src="js/offers.js"></script>
+</body>
+</html>

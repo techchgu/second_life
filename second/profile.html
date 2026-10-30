@@ -1,0 +1,350 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Manage your Second Life AI Marketplace profile.">
+
+  <title>My Profile | Second Life AI</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body class="profile-page">
+
+  <!-- HEADER + DESKTOP NAVBAR -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="brand" href="index.html" aria-label="Second Life AI Home">
+        <span class="brand-mark">S</span>
+        <span>
+          Second Life
+          <small>AI MARKETPLACE</small>
+        </span>
+      </a>
+
+      <nav class="desktop-navbar" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="browse.html">Explore</a>
+        <a href="categories.html">Categories</a>
+        <a href="add-listing.html" class="nav-sell">+ Sell Item</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="profile.html" class="nav-active" aria-current="page">
+          Profile
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- MAIN PROFILE -->
+  <main class="container profile-container">
+
+    <div class="profile-welcome">
+      <p class="eyebrow">YOUR ACCOUNT</p>
+      <h1>My Profile</h1>
+      <p>Manage your personal details and marketplace activity.</p>
+    </div>
+
+    <!-- PROFILE CARD -->
+    <section class="profile-card">
+
+      <div class="profile-top">
+
+        <div class="avatar-wrapper">
+          <img id="profileAvatar" alt="Your profile photo">
+          <span class="avatar-fallback" id="avatarFallback">👤</span>
+
+          <label for="photoInput" class="avatar-edit"
+                 title="Change profile photo">
+            <span aria-hidden="true">📷</span>
+          </label>
+
+          <input
+            id="photoInput"
+            type="file"
+            accept="image/png,image/jpeg,image/webp"
+            hidden
+          >
+        </div>
+
+        <div class="profile-identity">
+          <h2 id="displayName">Your Name</h2>
+          <p id="displayEmail">Loading account...</p>
+          <span class="profile-badge">♻ Marketplace Member</span>
+          <p class="photo-help">Tap the camera icon to change your photo.</p>
+        </div>
+
+      </div>
+
+      <!-- PROFILE STATISTICS -->
+      <div class="profile-stats">
+
+        <a href="my-listings.html" class="stat-item">
+          <strong id="listingCount">0</strong>
+          <span>My Listings</span>
+        </a>
+
+        <a href="saved.html" class="stat-item">
+          <strong id="savedCount">0</strong>
+          <span>Saved Items</span>
+        </a>
+
+        <a href="my-listings.html" class="stat-item">
+          <strong id="activeCount">0</strong>
+          <span>Active Ads</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- PERSONAL INFORMATION -->
+    <section class="profile-section">
+
+      <div class="section-heading">
+        <div>
+          <h2>Personal Information</h2>
+          <p>Update your account details.</p>
+        </div>
+        <span class="section-icon" aria-hidden="true">✎</span>
+      </div>
+
+      <form id="profileForm" class="profile-form">
+
+        <div class="form-group">
+          <label for="profileName">Full Name</label>
+          <input
+            id="profileName"
+            class="field"
+            type="text"
+            maxlength="100"
+            autocomplete="name"
+            placeholder="Enter your full name"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="profileEmail">Email Address</label>
+          <input
+            id="profileEmail"
+            class="field"
+            type="email"
+            autocomplete="email"
+            placeholder="Your registered email"
+            readonly
+          >
+          <small>Your registered email cannot be edited here.</small>
+        </div>
+
+        <div class="form-group">
+          <label for="profileLocation">Location</label>
+          <input
+            id="profileLocation"
+            class="field"
+            type="text"
+            maxlength="100"
+            autocomplete="address-level2"
+            placeholder="City or area"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="profileBio">About Me</label>
+          <textarea
+            id="profileBio"
+            class="field"
+            rows="4"
+            maxlength="500"
+            placeholder="Tell buyers a little about yourself"
+          ></textarea>
+        </div>
+
+        <p id="profileStatus" class="profile-status"
+           role="status" aria-live="polite"></p>
+
+        <button type="submit" class="btn btn-primary save-profile-btn">
+          Save Changes
+        </button>
+
+      </form>
+    </section>
+
+    <!-- ACCOUNT MENU -->
+    <section class="profile-section account-section">
+
+      <div class="section-heading">
+        <div>
+          <h2>My Account</h2>
+          <p>Quick access to marketplace features.</p>
+        </div>
+      </div>
+
+      <a class="account-link" href="dashboard.html">
+        <span class="menu-icon" aria-hidden="true">▦</span>
+        <span class="menu-copy">
+          <strong>Dashboard</strong>
+          <small>View your account overview</small>
+        </span>
+        <span class="menu-arrow" aria-hidden="true">›</span>
+      </a>
+
+      <a class="account-link" href="my-listings.html">
+        <span class="menu-icon" aria-hidden="true">📦</span>
+        <span class="menu-copy">
+          <strong>My Listings</strong>
+          <small>Manage products you listed</small>
+        </span>
+        <span class="menu-arrow" aria-hidden="true">›</span>
+      </a>
+
+      <a class="account-link" href="saved.html">
+        <span class="menu-icon" aria-hidden="true">♡</span>
+        <span class="menu-copy">
+          <strong>Saved Products</strong>
+          <small>View your favourite items</small>
+        </span>
+        <span class="menu-arrow" aria-hidden="true">›</span>
+      </a>
+
+      <a class="account-link" href="add-listing.html">
+        <span class="menu-icon" aria-hidden="true">＋</span>
+        <span class="menu-copy">
+          <strong>Sell an Item</strong>
+          <small>List an item for reuse</small>
+        </span>
+        <span class="menu-arrow" aria-hidden="true">›</span>
+      </a>
+
+      <button class="account-link logout-link"
+              id="logoutButton" type="button">
+        <span class="menu-icon" aria-hidden="true">↪</span>
+        <span class="menu-copy">
+          <strong>Log Out</strong>
+          <small>Sign out of your account</small>
+        </span>
+        <span class="menu-arrow" aria-hidden="true">›</span>
+      </button>
+
+    </section>
+
+  </main>
+
+  
+<!-- SECOND LIFE AI - PREMIUM FOOTER -->
+<footer class="sl-footer">
+
+  <div class="sl-footer-main">
+
+    <!-- Brand and description -->
+    <div class="sl-footer-brand">
+
+      <a class="sl-footer-logo" href="index.html">
+        <span class="sl-footer-logo-icon">S</span>
+        <span>
+          Second Life <span class="sl-footer-green">AI</span>
+          <small>REUSE. RESELL. REIMAGINE.</small>
+        </span>
+      </a>
+
+      <p>
+        Give useful products a second life. Discover reusable items,
+        connect with sellers and turn surplus into opportunity.
+      </p>
+
+      <a href="browse.html" class="sl-footer-cta">
+        Explore Marketplace <span>→</span>
+      </a>
+
+    </div>
+
+    <!-- Explore links -->
+    <div class="sl-footer-column">
+      <h3>Explore</h3>
+      <a href="browse.html">Marketplace</a>
+      <a href="bulk-marketplace.html">Bulk Marketplace</a>
+      <a href="matching.html">AI Matching</a>
+      <a href="offers.html">Make an Offer</a>
+    </div>
+
+    <!-- Marketplace links -->
+    <div class="sl-footer-column">
+      <h3>Marketplace</h3>
+      <a href="add-listing.html">Sell an Item</a>
+      <a href="saved.html">Saved Products</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">My Profile</a>
+    </div>
+
+    <!-- Account links -->
+    <div class="sl-footer-column">
+      <h3>Your Account</h3>
+      <a href="login.html">Log In</a>
+      <a href="signup.html">Create Account</a>
+      <a href="notifications.html">Notifications</a>
+      <a href="messages.html">Messages</a>
+    </div>
+
+  </div>
+
+  <!-- Bottom footer -->
+  <div class="sl-footer-bottom">
+
+    <p>
+      © 2026 Second Life AI. All rights reserved.
+    </p>
+
+    <p class="sl-footer-tagline">
+      Built for a more circular future <span>↗</span>
+    </p>
+
+    <a href="index.html" class="sl-footer-back-top">
+      Back to top ↑
+    </a>
+
+  </div>
+
+</footer>
+
+  <!-- MOBILE FIXED BOTTOM NAVBAR -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+
+    <a href="index.html">
+      <span class="nav-icon" aria-hidden="true">⌂</span>
+      <span>Home</span>
+    </a>
+
+    <a href="browse.html">
+      <span class="nav-icon" aria-hidden="true">⌕</span>
+      <span>Explore</span>
+    </a>
+
+    <a href="add-listing.html" class="add-product">
+      <span class="nav-icon" aria-hidden="true">+</span>
+      <span>Sell</span>
+    </a>
+
+    <a href="saved.html">
+      <span class="nav-icon" aria-hidden="true">♡</span>
+      <span>Saved</span>
+    </a>
+
+    <a href="profile.html" class="active" aria-current="page">
+      <span class="nav-icon" aria-hidden="true">♙</span>
+      <span>Profile</span>
+    </a>
+
+  </nav>
+
+  <!-- JAVASCRIPT -->
+  <script src="js/marketplace.js"></script>
+  <script src="js/profile.js"></script>
+
+</body>
+</html>

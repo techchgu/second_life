@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover reusable products on Second Life AI Marketplace.">
+  <title>Marketplace | Second Life AI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/browse.css">
+</head>
+<body class="browse-page">
+
+<!-- Announcement Bar -->
+<div class="home-announcement">
+  Give useful products a second life.
+</div>
+
+<!-- Homepage-style Header -->
+<header class="home-style-header">
+  <div class="home-header-inner">
+
+    <a class="home-brand" href="index.html">
+      <span class="home-brand-mark">S</span>
+      <span>Second Life AI</span>
+    </a>
+
+    <nav class="home-nav">
+      <a href="index.html">Home</a>
+      <a href="browse.html">Marketplace</a>
+      <a href="bulk-marketplace.html">Bulk Marketplace</a>
+      <a href="matching.html">AI Matching</a>
+      <a href="offers.html">Offers</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+
+    <div class="home-header-actions">
+      <a href="login.html" class="home-login-btn">Log in</a>
+      <a href="signup.html" class="home-start-btn">Get started</a>
+    </div>
+
+  </div>
+</header>
+
+
+  <main class="market-container">
+    <section class="market-intro">
+      <div>
+        <div class="eyebrow"><span></span> THE CIRCULAR MARKETPLACE</div>
+        <h1>Find something <span>worth reusing.</span></h1>
+        <p>Discover pre-loved products, save money and give useful things a second life.</p>
+      </div>
+      <a href="add-listing.html" class="sell-btn">＋ Sell an item</a>
+    </section>
+
+    <section class="market-toolbar" aria-label="Marketplace overview">
+      <div>
+        <span class="toolbar-label">EXPLORE MARKETPLACE</span>
+        <h2>Available Products</h2>
+        <p id="resultsCount" aria-live="polite">Loading products...</p>
+      </div>
+      <label class="sort-control">
+        <span>Sort by</span>
+        <select id="sortProducts">
+          <option value="recommended">Recommended</option>
+          <option value="newest">Newest first</option>
+          <option value="price-low">Price: Low to high</option>
+          <option value="price-high">Price: High to low</option>
+          <option value="name">Name: A to Z</option>
+        </select>
+      </label>
+    </section>
+
+    <div class="market-layout">
+      <aside class="filter-sidebar">
+        <div class="sidebar-heading">
+          <div>
+            <h2>Filters</h2>
+            <p>Find your perfect item</p>
+          </div>
+          <span class="filter-symbol">☷</span>
+        </div>
+
+        <div class="filter-group">
+          <h3>Categories</h3>
+          <div id="categoryFilters" class="category-list">
+            <label class="category-option">
+              <input type="radio" name="category" value="all" checked>
+              <span>All Products</span>
+              <span class="category-count" id="allCategoryCount">0</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="filter-divider"></div>
+
+        <form id="filterForm">
+          <div class="filter-group">
+            <label for="filterSearch" class="filter-title">Search products</label>
+            <input id="filterSearch" class="filter-input" type="search"
+              placeholder="Product name...">
+          </div>
+
+          <div class="filter-group">
+            <label for="maxPrice" class="filter-title">Maximum price (₹)</label>
+            <input id="maxPrice" class="filter-input" type="number"
+              min="0" step="1" placeholder="e.g. 5000">
+          </div>
+
+          <div class="filter-group">
+            <label for="conditionFilter" class="filter-title">Condition</label>
+            <select id="conditionFilter" class="filter-input">
+              <option value="all">Any condition</option>
+              <option value="new">New</option>
+              <option value="like new">Like new</option>
+              <option value="good">Good</option>
+              <option value="used">Used</option>
+            </select>
+          </div>
+
+          <button type="submit" class="apply-btn">Apply Filters</button>
+          <button type="button" id="clearFilters" class="clear-btn">Clear Filters</button>
+        </form>
+
+        <div class="sidebar-note">
+          <span>♻</span>
+          <div>
+            <strong>Choose reuse.</strong>
+            <p>Every reused product helps reduce waste.</p>
+          </div>
+        </div>
+      </aside>
+
+      <section class="products-area">
+        <div class="products-heading">
+          <div>
+            <h2 id="activeCategoryTitle">All Products</h2>
+            <p id="activeCategorySubtitle">Discover items from the community</p>
+          </div>
+          <a href="add-listing.html" class="mobile-sell-btn">＋ List item</a>
+        </div>
+
+        <div id="browseProducts" class="product-grid" aria-live="polite"></div>
+
+        <div id="emptyState" class="empty-state" hidden>
+          <div class="empty-icon">⌕</div>
+          <h3>No products found</h3>
+          <p>Try another category or clear some filters.</p>
+          <button type="button" id="emptyClearFilters">Clear all filters</button>
+        </div>
+
+        <div id="loadError" class="load-error" hidden>
+          <h3>Products could not be loaded</h3>
+          <p>Check that your product data script is loaded and try refreshing.</p>
+          <button type="button" id="retryProducts">Try again</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+<!-- SECOND LIFE AI - PREMIUM FOOTER -->
+<footer class="sl-footer">
+
+  <div class="sl-footer-main">
+
+    <!-- Brand and description -->
+    <div class="sl-footer-brand">
+
+      <a class="sl-footer-logo" href="index.html">
+        <span class="sl-footer-logo-icon">S</span>
+        <span>
+          Second Life <span class="sl-footer-green">AI</span>
+          <small>REUSE. RESELL. REIMAGINE.</small>
+        </span>
+      </a>
+
+      <p>
+        Give useful products a second life. Discover reusable items,
+        connect with sellers and turn surplus into opportunity.
+      </p>
+
+      <a href="browse.html" class="sl-footer-cta">
+        Explore Marketplace <span>→</span>
+      </a>
+
+    </div>
+
+    <!-- Explore links -->
+    <div class="sl-footer-column">
+      <h3>Explore</h3>
+      <a href="browse.html">Marketplace</a>
+      <a href="bulk-marketplace.html">Bulk Marketplace</a>
+      <a href="matching.html">AI Matching</a>
+      <a href="offers.html">Make an Offer</a>
+    </div>
+
+    <!-- Marketplace links -->
+    <div class="sl-footer-column">
+      <h3>Marketplace</h3>
+      <a href="add-listing.html">Sell an Item</a>
+      <a href="saved.html">Saved Products</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">My Profile</a>
+    </div>
+
+    <!-- Account links -->
+    <div class="sl-footer-column">
+      <h3>Your Account</h3>
+      <a href="login.html">Log In</a>
+      <a href="signup.html">Create Account</a>
+      <a href="notifications.html">Notifications</a>
+      <a href="messages.html">Messages</a>
+    </div>
+
+  </div>
+
+  <!-- Bottom footer -->
+  <div class="sl-footer-bottom">
+
+    <p>
+      © 2026 Second Life AI. All rights reserved.
+    </p>
+
+    <p class="sl-footer-tagline">
+      Built for a more circular future <span>↗</span>
+    </p>
+
+    <a href="index.html" class="sl-footer-back-top">
+      Back to top ↑
+    </a>
+
+  </div>
+
+</footer>
+
+
+  <!-- Load your existing product data before browse.js -->
+  <script src="js/data.js"></script>
+  <script src="js/browse.js"></script>
+</body>
+</html>

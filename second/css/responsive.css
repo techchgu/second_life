@@ -1,0 +1,360 @@
+
+@media (max-width: 1050px) {
+  .header { flex-wrap: wrap; }
+  .nav { order: 3; width: 100%; justify-content: center; flex-wrap: wrap; }
+  .hero { padding: 55px 5%; gap: 30px; }
+  .category-grid, .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 680px) {
+  .header { padding: 14px 5%; gap: 14px; }
+  .header-actions { gap: 7px; }
+  .header-actions .btn { padding: 9px 10px; font-size: 12px; }
+  .nav { justify-content: flex-start; gap: 15px; overflow-x: auto; flex-wrap: nowrap; }
+  .nav a { white-space: nowrap; }
+  .hero { grid-template-columns: 1fr; padding: 43px 6%; }
+  .hero h1 { font-size: 43px; letter-spacing: -1.5px; }
+  .hero-links { flex-wrap: wrap; gap: 10px; }
+  .hero-search { gap: 7px; }
+  .hero-search .btn { padding: 10px; }
+  .visual-card img { height: 230px; }
+  .section { padding: 42px 5%; }
+  .section-heading { align-items: flex-start; flex-direction: column; }
+  .category-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .category-card { padding: 12px; gap: 9px; }
+  .category-icon { width: 38px; height: 38px; font-size: 19px; }
+  .category-card strong { font-size: 12px; }
+  .category-card small { font-size: 10px; }
+  .product-grid { grid-template-columns: 1fr 1fr; gap: 11px; }
+  .product-image img { height: 145px; }
+  .product-body { padding: 11px; }
+  .product-body h3 { font-size: 13px; }
+  .product-price { font-size: 15px; }
+  .product-bottom { flex-wrap: wrap; }
+  .ai-banner { flex-direction: column; align-items: flex-start; margin: 35px 5%; padding: 25px; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .seller-banner { flex-direction: column; align-items: flex-start; margin: 0 5% 40px; padding: 24px; }
+  .footer { padding: 30px 5% 20px; }
+}
+
+@media (max-width: 380px) {
+  .category-grid, .product-grid { grid-template-columns: 1fr; }
+}
+
+
+/* ======================================
+   SECOND LIFE AI - PROFILE RESPONSIVE
+   ====================================== */
+
+.profile-page {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.profile-main {
+  padding-top: 36px;
+  padding-bottom: 40px;
+}
+
+.profile-heading {
+  margin-bottom: 24px;
+}
+
+.profile-heading h1 {
+  margin: 8px 0;
+  font-size: clamp(28px, 5vw, 38px);
+  line-height: 1.2;
+}
+
+.profile-subtitle,
+.profile-card-heading p,
+.profile-account-actions > p {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.profile-card,
+.profile-account-actions {
+  width: 100%;
+  max-width: 680px;
+  margin: 0 auto 24px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(15, 23, 42, 0.04);
+}
+
+.profile-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: #ecfdf5;
+  font-size: 30px;
+}
+
+.profile-card-heading h2,
+.profile-account-actions h2 {
+  margin: 0 0 8px;
+  font-size: 21px;
+}
+
+.profile-card-heading p {
+  margin: 0 0 22px;
+}
+
+.profile-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 19px;
+}
+
+.profile-field label {
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.profile-field .field {
+  width: 100%;
+  max-width: 100%;
+  min-height: 46px;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 16px;
+}
+
+.profile-field textarea.field {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.profile-field .field:focus {
+  outline: 2px solid #a7f3d0;
+  border-color: #059669;
+}
+
+.profile-field .field[readonly] {
+  background: #f8fafc;
+  color: #64748b;
+}
+
+.field-hint {
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.profile-save {
+  width: 100%;
+  min-height: 48px;
+  border: none;
+  cursor: pointer;
+}
+
+.profile-status {
+  overflow-wrap: anywhere;
+}
+
+.profile-action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.mobile-dashboard {
+  display: none;
+}
+
+/* Bottom navigation: hidden on desktop */
+.mobile-bottom-nav {
+  display: none;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .profile-page {
+    padding-bottom: calc(78px + env(safe-area-inset-bottom));
+  }
+
+  .profile-page .container {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .profile-page .site-header .header-inner {
+    min-height: 68px;
+    gap: 10px;
+  }
+
+  .profile-page .brand {
+    min-width: 0;
+    font-size: 16px;
+  }
+
+  .profile-page .brand small {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+
+  .desktop-dashboard {
+    display: none;
+  }
+
+  .mobile-dashboard {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .profile-main {
+    padding-top: 24px;
+    padding-bottom: 18px;
+  }
+
+  .profile-heading {
+    margin-bottom: 20px;
+  }
+
+  .profile-heading h1 {
+    font-size: 30px;
+  }
+
+  .profile-subtitle {
+    font-size: 14px;
+  }
+
+  .profile-card,
+  .profile-account-actions {
+    padding: 18px;
+    margin-bottom: 18px;
+    border-radius: 14px;
+  }
+
+  .profile-avatar {
+    width: 54px;
+    height: 54px;
+    font-size: 26px;
+  }
+
+  .profile-card-heading h2,
+  .profile-account-actions h2 {
+    font-size: 19px;
+  }
+
+  .profile-field {
+    margin-bottom: 17px;
+  }
+
+  .profile-field .field {
+    font-size: 16px;
+    /* Prevents iOS Safari from zooming on focus */
+    min-width: 0;
+  }
+
+  .profile-action-buttons {
+    flex-direction: column;
+  }
+
+  .profile-action-buttons .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 46px;
+  }
+
+  /* Fixed mobile bottom navbar */
+  .mobile-bottom-nav {
+    position: fixed;
+    z-index: 9999;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: center;
+    gap: 0;
+
+    width: 100%;
+    padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+
+    background: #ffffff;
+    border-top: 1px solid #e2e8f0;
+    box-shadow: 0 -4px 18px rgba(15, 23, 42, 0.08);
+  }
+
+  .mobile-bottom-nav a {
+    display: flex;
+    min-width: 0;
+    min-height: 48px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+
+    color: #64748b;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+
+  .mobile-bottom-nav .nav-icon {
+    font-size: 21px;
+    line-height: 1;
+  }
+
+  .mobile-bottom-nav a.active {
+    color: #059669;
+  }
+
+  .mobile-bottom-nav a.add-product .nav-icon {
+    display: flex;
+    width: 36px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+    background: #059669;
+    color: #ffffff;
+    font-size: 24px;
+  }
+
+  .mobile-bottom-nav a.add-product {
+    color: #059669;
+  }
+}
+
+@media (max-width: 360px) {
+  .profile-page .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .profile-card,
+  .profile-account-actions {
+    padding: 14px;
+  }
+
+  .mobile-bottom-nav a {
+    font-size: 9px;
+  }
+
+  .mobile-bottom-nav .nav-icon {
+    font-size: 19px;
+  }
+}

@@ -1,0 +1,270 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover reusable products with AI-powered matching on Second Life AI.">
+  <title>AI Matching | Second Life AI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/matching.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="matching-page">
+
+<header class="matching-navbar">
+  <div class="matching-header-inner">
+
+    <!-- Brand -->
+    <a href="index.html" class="matching-brand">
+      <span class="matching-logo">S</span>
+
+      <span class="matching-brand-text">
+        <strong>Second Life AI</strong>
+        <small>REUSE. RESELL. REIMAGINE.</small>
+      </span>
+    </a>
+
+    <!-- Navbar search -->
+    <form class="matching-search-box"
+          action="browse.html"
+          method="get">
+      <span aria-hidden="true">⌕</span>
+
+      <input
+        type="search"
+        name="q"
+        placeholder="Search products, categories..."
+        aria-label="Search products"
+      >
+
+      <button type="submit">Search</button>
+    </form>
+
+    <!-- Navigation -->
+    <nav class="matching-nav">
+      <a href="index.html">Home</a>
+      <a href="browse.html">Marketplace</a>
+      <a href="bulk-marketplace.html">Bulk Marketplace</a>
+      <a href="matching.html" class="active">AI Matching</a>
+      <a href="offers.html">Offers</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+
+    <!-- Account buttons -->
+    <div class="matching-nav-actions">
+      <a href="login.html" class="matching-dashboard-btn">
+        Log in
+      </a>
+
+      <a href="signup.html" class="matching-sell-btn">
+        Join Free ↗
+      </a>
+    </div>
+
+  </div>
+</header>
+
+
+<main>
+  <!-- HERO -->
+  <section class="matching-hero">
+    <div class="matching-hero-inner">
+      <div class="matching-hero-copy">
+        <span class="matching-eyebrow">✦ SMART PRODUCT DISCOVERY</span>
+        <h1>Find Your <span>Best Match</span></h1>
+        <p>Tell us what you need and explore matching listings.</p>
+      </div>
+
+      <div class="matching-hero-art" aria-hidden="true">
+        <div class="art-glow"></div>
+        <div class="art-spark spark-one">✦</div>
+        <div class="art-spark spark-two">✧</div>
+        <div class="art-leaf leaf-one"></div>
+        <div class="art-leaf leaf-two"></div>
+        <div class="art-robot">
+          <span class="robot-antenna"></span>
+          <span class="robot-eyes"><i></i><i></i></span>
+          <span class="robot-smile"></span>
+        </div>
+        <div class="art-search">⌕</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATCHING FORM -->
+  <section class="matching-form-section">
+    <form id="matchingForm" class="matching-form">
+
+      <div class="matching-field">
+        <label for="matchQuery">What are you looking for?</label>
+        <div class="input-with-icon">
+          <span>⌕</span>
+          <input
+            id="matchQuery"
+            type="search"
+            placeholder="e.g. study table, laptop, spare tools"
+            required
+          >
+        </div>
+      </div>
+
+      <div class="matching-field">
+        <label for="matchCategory">Category</label>
+        <select id="matchCategory">
+          <option value="All">All Categories</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Furniture">Furniture</option>
+          <option value="Construction">Construction</option>
+          <option value="Tools & Machinery">Tools & Machinery</option>
+          <option value="Tools">Tools</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Books">Books</option>
+          <option value="Sports & Bicycles">Sports & Bicycles</option>
+          <option value="Business Supplies">Business Supplies</option>
+          <option value="Agriculture">Agriculture</option>
+          <option value="Home Appliances">Home Appliances</option>
+          <option value="Automotive Parts">Automotive Parts</option>
+          <option value="Packaging">Packaging</option>
+          <option value="Kitchen">Kitchen</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="matching-field budget-field">
+        <label for="matchBudget">Maximum budget (₹)</label>
+        <div class="input-with-icon">
+          <span class="rupee-icon">₹</span>
+          <input
+            id="matchBudget"
+            type="number"
+            min="0"
+            placeholder="e.g. 5000"
+          >
+        </div>
+      </div>
+
+      <button class="match-submit-btn" type="submit">
+        <span>✦</span> Find Matches
+      </button>
+
+    </form>
+  </section>
+
+  <!-- RESULTS -->
+  <section class="matching-results-section">
+    <div class="matching-results-heading">
+      <div>
+        <h2>Matching Products</h2>
+        <p>Personalized suggestions based on your needs.</p>
+      </div>
+
+      <span class="ai-powered-label">
+        <span>✦</span> AI Powered Matching
+      </span>
+    </div>
+
+    <div id="matchSummary" class="match-summary" aria-live="polite">
+      Enter your needs to find products.
+    </div>
+
+    <div id="matchingResults" class="matching-product-grid"></div>
+
+    <div id="matchingEmpty" class="matching-empty" hidden>
+      <div class="empty-search-icon">⌕</div>
+      <h3>No matching products found</h3>
+      <p>Try another search, category or a higher budget.</p>
+      <button id="resetMatching" class="match-outline-btn" type="button">
+        Reset Search
+      </button>
+    </div>
+  </section>
+</main>
+
+
+<!-- SECOND LIFE AI - PREMIUM FOOTER -->
+<footer class="sl-footer">
+
+  <div class="sl-footer-main">
+
+    <!-- Brand and description -->
+    <div class="sl-footer-brand">
+
+      <a class="sl-footer-logo" href="index.html">
+        <span class="sl-footer-logo-icon">S</span>
+        <span>
+          Second Life <span class="sl-footer-green">AI</span>
+          <small>REUSE. RESELL. REIMAGINE.</small>
+        </span>
+      </a>
+
+      <p>
+        Give useful products a second life. Discover reusable items,
+        connect with sellers and turn surplus into opportunity.
+      </p>
+
+      <a href="browse.html" class="sl-footer-cta">
+        Explore Marketplace <span>→</span>
+      </a>
+
+    </div>
+
+    <!-- Explore links -->
+    <div class="sl-footer-column">
+      <h3>Explore</h3>
+      <a href="browse.html">Marketplace</a>
+      <a href="bulk-marketplace.html">Bulk Marketplace</a>
+      <a href="matching.html">AI Matching</a>
+      <a href="offers.html">Make an Offer</a>
+    </div>
+
+    <!-- Marketplace links -->
+    <div class="sl-footer-column">
+      <h3>Marketplace</h3>
+      <a href="add-listing.html">Sell an Item</a>
+      <a href="saved.html">Saved Products</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">My Profile</a>
+    </div>
+
+    <!-- Account links -->
+    <div class="sl-footer-column">
+      <h3>Your Account</h3>
+      <a href="login.html">Log In</a>
+      <a href="signup.html">Create Account</a>
+      <a href="notifications.html">Notifications</a>
+      <a href="messages.html">Messages</a>
+    </div>
+
+  </div>
+
+  <!-- Bottom footer -->
+  <div class="sl-footer-bottom">
+
+    <p>
+      © 2026 Second Life AI. All rights reserved.
+    </p>
+
+    <p class="sl-footer-tagline">
+      Built for a more circular future <span>↗</span>
+    </p>
+
+    <a href="index.html" class="sl-footer-back-top">
+      Back to top ↑
+    </a>
+
+  </div>
+
+</footer>
+
+
+<script src="js/data.js"></script>
+<script src="js/marketplace.js"></script>
+<script src="js/matching.js"></script>
+
+</body>
+</html>

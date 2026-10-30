@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="List reusable and surplus products on Second Life AI.">
+  <title>List a Product | Second Life AI</title>
+
+  <link rel="stylesheet" href="css/add-listing.css">
+</head>
+<body>
+
+  <div class="announcement">Give useful products a second life.</div>
+
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <span class="brand-icon">S</span>
+      <span>Second Life AI</span>
+    </a>
+
+    <nav class="navigation">
+      <a href="index.html">Home</a>
+      <a href="browse.html">Marketplace</a>
+      <a href="bulk-marketplace.html">Bulk Marketplace</a>
+      <a href="matching.html">AI Matching</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+
+    <a class="header-link" href="login.html">Log in</a>
+  </header>
+
+  <main class="page-container">
+    <a class="back-link" href="index.html">← Back to home</a>
+
+    <section class="page-heading">
+      <span class="eyebrow">SELL · REUSE · RECYCLE</span>
+      <h1>List your product</h1>
+      <p>
+        Give your unused or surplus products a second life.
+        Add your product details and connect with interested buyers.
+      </p>
+    </section>
+
+    <div class="listing-layout">
+      <section class="form-card">
+        <form id="addProductForm">
+
+          <h2>Product information</h2>
+
+          <div class="field">
+            <label for="productName">Product name <span>*</span></label>
+            <input
+              id="productName"
+              name="name"
+              type="text"
+              maxlength="120"
+              placeholder="e.g. Refurbished laptop"
+              required
+            >
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="category">Category <span>*</span></label>
+              <select id="category" name="category" required>
+                <option value="">Select category</option>
+                <option>Electronics</option>
+                <option>Computers & Laptops</option>
+                <option>Mobile Phones</option>
+                <option>Furniture</option>
+                <option>Home & Kitchen</option>
+                <option>Clothing & Accessories</option>
+                <option>Books & Stationery</option>
+                <option>Industrial Equipment</option>
+                <option>Packaging Materials</option>
+                <option>Plastic & Recycling</option>
+                <option>Metal & Scrap</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="condition">Product condition <span>*</span></label>
+              <select id="condition" name="condition" required>
+                <option value="">Select condition</option>
+                <option>New</option>
+                <option>Like New</option>
+                <option>Good</option>
+                <option>Fair</option>
+                <option>For Parts / Repair</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="description">Description <span>*</span></label>
+            <textarea
+              id="description"
+              name="description"
+              rows="5"
+              maxlength="3000"
+              placeholder="Describe the product, its features, quality, age and any defects..."
+              required
+            ></textarea>
+          </div>
+
+          <h2 class="section-heading">Price and availability</h2>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="price">Selling price (₹) <span>*</span></label>
+              <input
+                id="price"
+                name="price"
+                type="number"
+                min="1"
+                step="0.01"
+                placeholder="e.g. 18500"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="originalPrice">Original price (₹)</label>
+              <input
+                id="originalPrice"
+                name="originalPrice"
+                type="number"
+                min="0"
+                step="0.01"
+                placeholder="Optional"
+              >
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="quantity">Available quantity</label>
+            <input
+              id="quantity"
+              name="quantity"
+              type="number"
+              min="1"
+              step="1"
+              value="1"
+              required
+            >
+          </div>
+
+          <div class="field">
+            <label for="imageUrl">Product image URL <span>*</span></label>
+            <input
+              id="imageUrl"
+              name="imageUrl"
+              type="url"
+              maxlength="1500"
+              placeholder="https://example.com/product.jpg"
+              required
+            >
+            <small>Enter a direct image link that can be opened publicly.</small>
+          </div>
+
+          <div class="image-preview" id="imagePreview">
+            <div class="preview-placeholder">Image preview will appear here</div>
+            <img id="previewImage" alt="Product preview" hidden>
+          </div>
+
+          <h2 class="section-heading">Seller information</h2>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="sellerName">Seller / Business name <span>*</span></label>
+              <input
+                id="sellerName"
+                name="sellerName"
+                type="text"
+                maxlength="120"
+                placeholder="Your name or business"
+                required
+              >
+            </div>
+
+            <div class="field">
+              <label for="location">City and state <span>*</span></label>
+              <input
+                id="location"
+                name="location"
+                type="text"
+                maxlength="150"
+                placeholder="e.g. Jabalpur, Madhya Pradesh"
+                required
+              >
+            </div>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="contactMethod">Preferred contact <span>*</span></label>
+              <select id="contactMethod" name="contactMethod" required>
+                <option value="">Select contact method</option>
+                <option value="Marketplace">Marketplace messages</option>
+                <option value="Phone">Phone</option>
+                <option value="Email">Email</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="contact">Contact detail</label>
+              <input
+                id="contact"
+                name="contact"
+                type="text"
+                maxlength="150"
+                placeholder="Optional phone or email"
+              >
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="delivery">Pickup / delivery information</label>
+            <textarea
+              id="delivery"
+              name="delivery"
+              rows="2"
+              maxlength="500"
+              placeholder="e.g. Local pickup available; delivery can be discussed"
+            ></textarea>
+          </div>
+
+          <label class="checkbox-row">
+            <input type="checkbox" id="confirmDetails" required>
+            <span>I confirm that the product details are accurate and I am allowed to sell this item.</span>
+          </label>
+
+          <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+
+          <div class="form-actions">
+            <a href="index.html" class="btn btn-outline">Cancel</a>
+            <button type="submit" id="publishButton" class="btn btn-primary">
+              Publish product →
+            </button>
+          </div>
+
+          <p class="privacy-note">
+            Your listing will be saved to your account. Only share contact
+            information you are comfortable making available to potential buyers.
+          </p>
+        </form>
+      </section>
+
+      <aside class="sidebar">
+        <div class="side-card">
+          <div class="side-icon">✦</div>
+          <h3>Tips for a better listing</h3>
+          <ul>
+            <li>Use a clear, specific product name.</li>
+            <li>Add an accurate description and condition.</li>
+            <li>Set a realistic selling price.</li>
+            <li>Use a clear product image.</li>
+            <li>Mention any damage or missing parts.</li>
+          </ul>
+        </div>
+
+        <div class="side-card green-card">
+          <h3>Give it a second life.</h3>
+          <p>Help useful products find the people who need them.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <strong>Second Life AI</strong>
+    <p>Give useful products a second life.</p>
+  </footer>
+
+  <!-- Firebase compat SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+  <!-- Your existing Firebase initialization -->
+  <script src="js/firebase-config.js"></script>
+
+  <script src="js/add-listing.js"></script>
+</body>
+</html>

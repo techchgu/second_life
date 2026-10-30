@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Panel | Second Life AI</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">S</span>
+      <span>Second Life <small>ADMIN PANEL</small></span>
+    </a>
+    <a class="btn btn-outline" href="index.html">View Website</a>
+  </div>
+</header>
+
+<main class="container page-section">
+  <p class="eyebrow">MARKETPLACE MANAGEMENT</p>
+  <h1>Admin Dashboard</h1>
+  <p class="muted">Manage demo listings stored in this browser.</p>
+
+  <div class="stats-grid">
+    <div class="stat-card"><span>Total Products</span><strong id="adminTotal">0</strong></div>
+    <div class="stat-card"><span>User Listings</span><strong id="adminUserListings">0</strong></div>
+    <div class="stat-card"><span>Offers</span><strong id="adminOffers">0</strong></div>
+    <div class="stat-card"><span>Enquiries</span><strong id="adminMessages">0</strong></div>
+  </div>
+
+  <div class="section-heading">
+    <h2>Product Listings</h2>
+    <input id="adminSearch" class="field" type="search" placeholder="Search listings...">
+  </div>
+
+  <div class="table-scroll">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Type</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="adminProductRows"></tbody>
+    </table>
+  </div>
+  <p id="adminEmpty" class="empty-state" hidden>No listings found.</p>
+  <p id="adminStatus" role="status"></p>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/marketplace.js"></script>
+<script src="js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,389 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover surplus, reusable and pre-owned products with Second Life AI.">
+  <meta name="theme-color" content="#078260">
+
+  <title>Second Life AI | Turn Surplus Into Opportunity</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/index.css">
+
+  <script src="js/data.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+
+<body>
+
+  <!-- Announcement -->
+  <div class="announcement">
+    Give useful products a second life.
+  </div>
+
+  <!-- Main Navbar -->
+  <header class="header">
+
+    <a class="brand" href="index.html">
+      <span class="brand-icon">S</span>
+      <span>Second Life <span class="green">AI</span></span>
+    </a>
+
+    <nav class="nav" aria-label="Main navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="browse.html">Marketplace</a>
+      <a href="bulk-marketplace.html">Bulk Marketplace</a>
+      <a href="matching.html">AI Matching</a>
+      <a href="offers.html">Offers</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-outline" href="login.html">Log in</a>
+      <a class="btn btn-primary" href="signup.html">Get started</a>
+    </div>
+
+  </header>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <span class="eyebrow">A smarter way to reuse</span>
+
+        <h1>
+          Give Every Product a
+          <span class="green">Second Life.</span>
+        </h1>
+
+        <p>
+          Discover useful surplus products, find better-fit alternatives,
+          and connect with people who have what you need.
+        </p>
+
+        <form id="heroSearch" class="hero-search"
+          action="browse.html" method="get">
+
+          <span aria-hidden="true">⌕</span>
+
+          <input
+            id="searchInput"
+            name="q"
+            type="search"
+            placeholder="What are you looking for?"
+            aria-label="Search products"
+          >
+
+          <button class="btn btn-primary" type="submit">
+            Search
+          </button>
+
+        </form>
+
+        <div class="hero-links">
+          <a class="btn btn-primary btn-large" href="browse.html">
+            Explore marketplace →
+          </a>
+
+          <a class="btn btn-outline btn-large" href="add-listing.html">
+            ＋ List a product
+          </a>
+        </div>
+
+        <div class="hero-note">
+          <span class="green">●</span>
+          Buy smarter. Reuse more. Waste less.
+        </div>
+
+      </div>
+
+      <div class="hero-visual">
+
+        <div class="visual-card visual-main">
+
+          <img
+            src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=900&q=80"
+            alt="Pre-owned laptop available for reuse"
+          >
+
+          <div class="visual-info">
+            <div>
+              <strong>Refurbished laptop</strong>
+              <p>Electronics · Good condition</p>
+            </div>
+
+            <strong class="price">₹18,500</strong>
+          </div>
+
+          <span class="floating-label">
+            Find your next useful thing
+          </span>
+
+        </div>
+
+        <div class="visual-decoration">↗</div>
+
+      </div>
+
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section" id="categories">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="eyebrow">Explore</span>
+          <h2>Shop by category</h2>
+          <p>
+            Find products across different industries and everyday needs.
+          </p>
+        </div>
+
+        <a href="browse.html"
+          class="text-link desktop-all-categories">
+          All categories →
+        </a>
+
+      </div>
+
+      <!-- Categories loaded by js/app.js -->
+      <div
+        id="categoryGrid"
+        class="category-grid mobile-category-grid">
+      </div>
+
+      <!-- Mobile-only button -->
+      <a href="browse.html" class="mobile-more-categories">
+        More Categories <span aria-hidden="true">→</span>
+      </a>
+
+    </section>
+
+    <!-- Recently Listed Products -->
+    <section class="section products-section" id="recent-products">
+
+      <div class="section-heading">
+
+        <div>
+          <span class="eyebrow">Fresh finds</span>
+          <h2>Recently listed products</h2>
+          <p>
+            Explore demo listings across our marketplace categories.
+          </p>
+        </div>
+
+        <a href="browse.html"
+          class="text-link desktop-all-products">
+          View marketplace →
+        </a>
+
+      </div>
+
+      <!-- Products loaded by js/app.js -->
+      <div
+        id="productGrid"
+        class="product-grid mobile-product-grid">
+      </div>
+
+      <!-- Mobile-only button -->
+      <a href="browse.html" class="mobile-view-all-products">
+        View All Products <span aria-hidden="true">→</span>
+      </a>
+
+    </section>
+
+    <!-- AI Matching Banner -->
+    <section class="ai-banner">
+
+      <div class="ai-icon">✳</div>
+
+      <div class="ai-copy">
+        <span class="eyebrow">AI-assisted discovery</span>
+
+        <h2>Find the right product, not just any product.</h2>
+
+        <p>
+          Tell us what you need, your budget and preferred condition.
+          Get ranked suggestions with clear explanations.
+        </p>
+      </div>
+
+      <a class="btn btn-light" href="matching.html">
+        Find my match →
+      </a>
+
+    </section>
+
+    <!-- How It Works -->
+    <section class="section how-section">
+
+      <div class="section-heading centered">
+        <div>
+          <span class="eyebrow">Simple by design</span>
+          <h2>How Second Life AI works</h2>
+        </div>
+      </div>
+
+      <div class="steps-grid">
+
+        <article class="step-card">
+          <span class="step-number">01</span>
+          <h3>Discover</h3>
+          <p>
+            Browse categories or search for a product that fits your needs.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <span class="step-number">02</span>
+          <h3>Get matched</h3>
+          <p>
+            Compare available listings using your budget and preferences.
+          </p>
+        </article>
+
+        <article class="step-card">
+          <span class="step-number">03</span>
+          <h3>Connect</h3>
+          <p>
+            Contact sellers and discuss an offer before completing a deal.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- Seller Banner -->
+    <section class="seller-banner">
+
+      <div>
+        <span class="eyebrow">Have something useful?</span>
+        <h2>Turn surplus into opportunity.</h2>
+        <p>
+          List your reusable products and help someone find what they need.
+        </p>
+      </div>
+
+      <a href="add-listing.html" class="btn btn-primary btn-large">
+        Start selling →
+      </a>
+
+    </section>
+
+  </main>
+
+<!-- SECOND LIFE AI - PREMIUM FOOTER -->
+<footer class="sl-footer">
+
+  <div class="sl-footer-main">
+
+    <!-- Brand and description -->
+    <div class="sl-footer-brand">
+
+      <a class="sl-footer-logo" href="index.html">
+        <span class="sl-footer-logo-icon">S</span>
+        <span>
+          Second Life <span class="sl-footer-green">AI</span>
+          <small>REUSE. RESELL. REIMAGINE.</small>
+        </span>
+      </a>
+
+      <p>
+        Give useful products a second life. Discover reusable items,
+        connect with sellers and turn surplus into opportunity.
+      </p>
+
+      <a href="browse.html" class="sl-footer-cta">
+        Explore Marketplace <span>→</span>
+      </a>
+
+    </div>
+
+    <!-- Explore links -->
+    <div class="sl-footer-column">
+      <h3>Explore</h3>
+      <a href="browse.html">Marketplace</a>
+      <a href="bulk-marketplace.html">Bulk Marketplace</a>
+      <a href="matching.html">AI Matching</a>
+      <a href="offers.html">Make an Offer</a>
+    </div>
+
+    <!-- Marketplace links -->
+    <div class="sl-footer-column">
+      <h3>Marketplace</h3>
+      <a href="add-listing.html">Sell an Item</a>
+      <a href="saved.html">Saved Products</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">My Profile</a>
+    </div>
+
+    <!-- Account links -->
+    <div class="sl-footer-column">
+      <h3>Your Account</h3>
+      <a href="login.html">Log In</a>
+      <a href="signup.html">Create Account</a>
+      <a href="notifications.html">Notifications</a>
+      <a href="messages.html">Messages</a>
+    </div>
+
+  </div>
+
+  <!-- Bottom footer -->
+  <div class="sl-footer-bottom">
+
+    <p>
+      © 2026 Second Life AI. All rights reserved.
+    </p>
+
+    <p class="sl-footer-tagline">
+      Built for a more circular future <span>↗</span>
+    </p>
+
+    <a href="index.html" class="sl-footer-back-top">
+      Back to top ↑
+    </a>
+
+  </div>
+
+</footer>
+
+  <!-- Mobile Bottom Navigation -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+
+    <a href="index.html" class="active">
+      <span class="nav-icon" aria-hidden="true">⌂</span>
+      <span>Home</span>
+    </a>
+
+    <a href="browse.html">
+      <span class="nav-icon" aria-hidden="true">▦</span>
+      <span>Explore</span>
+    </a>
+
+    <a href="add-listing.html" class="add-product">
+      <span class="nav-icon" aria-hidden="true">+</span>
+      <span>Sell</span>
+    </a>
+
+    <a href="saved.html">
+      <span class="nav-icon" aria-hidden="true">♡</span>
+      <span>Saved</span>
+    </a>
+
+    <a href="profile.html">
+      <span class="nav-icon" aria-hidden="true">♙</span>
+      <span>Profile</span>
+    </a>
+
+  </nav>
+
+</body>
+</html>

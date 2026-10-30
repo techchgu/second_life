@@ -1,0 +1,195 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bulk Marketplace | Second Life AI</title>
+  <link rel="stylesheet" href="css/bulk.css">
+</head>
+<body data-page="marketplace">
+  <header class="topbar">
+    <a class="brand" href="index.html">♻ Second Life AI</a>
+    <nav>
+      <a href="index.html">Home</a>
+      <a class="active" href="bulk-marketplace.html">Bulk Marketplace</a>
+      <a href="bulk-listing.html">Sell Materials</a>
+      <a href="bulk-requirements.html">Post Requirement</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+    <span id="authStatus">Loading account…</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <span class="eyebrow">BUSINESS • INDUSTRY • REUSE</span>
+      <h1>Buy & Sell Raw Materials <span>in Bulk.</span></h1>
+      <p>Connect businesses, discover bulk materials, and turn surplus resources into valuable opportunities.</p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#market">Explore Bulk Materials</a>
+        <a class="btn secondary" href="bulk-requirements.html">+ Post Your Requirement</a>
+      </div>
+    </section>
+
+    <div class="category-strip" id="categoryStrip">
+      <button class="category-chip active" data-category="all">All categories</button>
+      <button class="category-chip" data-category="Metals">Metals</button>
+      <button class="category-chip" data-category="Plastics">Plastics</button>
+      <button class="category-chip" data-category="Paper">Paper</button>
+      <button class="category-chip" data-category="Electronics">Electronics</button>
+      <button class="category-chip" data-category="Textiles">Textiles</button>
+      <button class="category-chip" data-category="Wood">Wood</button>
+      <button class="category-chip" data-category="Industrial Components">Industrial Components</button>
+      <button class="category-chip" data-category="Other">Other</button>
+    </div>
+
+    <div id="bulkMessage" class="notice" role="status"></div>
+
+    <section class="workspace" id="market">
+      <aside class="panel filters">
+        <h2>Find materials</h2>
+        <label>Search
+          <input id="bulkSearch" placeholder="Search raw materials…">
+        </label>
+        <label>Category
+          <select id="bulkCategory">
+            <option value="all">All categories</option>
+            <option>Metals</option><option>Plastics</option>
+            <option>Paper</option><option>Electronics</option>
+            <option>Textiles</option><option>Wood</option>
+            <option>Industrial Components</option><option>Other</option>
+          </select>
+        </label>
+        <label>Location
+          <input id="bulkLocation" placeholder="e.g. Indore">
+        </label>
+        <label>Maximum unit price (₹)
+          <input id="bulkMaxPrice" type="number" min="0" placeholder="Any price">
+        </label>
+        <label>Condition
+          <select id="bulkCondition">
+            <option value="all">All conditions</option>
+            <option>New</option><option>Reusable</option>
+            <option>Recycled</option><option>Surplus</option>
+          </select>
+        </label>
+        <label>Sort by
+          <select id="bulkSort">
+            <option value="newest">Newest first</option>
+            <option value="price-low">Price: low to high</option>
+            <option value="price-high">Price: high to low</option>
+            <option value="quantity">Largest quantity</option>
+          </select>
+        </label>
+        <button class="btn primary full" id="applyBulkFilters" type="button">Apply Filters</button>
+        <button class="btn secondary full" id="clearBulkFilters" type="button">Clear Filters</button>
+      </aside>
+
+      <section class="results">
+        <div class="tabs">
+          <button class="tab active" data-mode="listings" type="button">Buy Bulk Materials</button>
+          <button class="tab" data-mode="requirements" type="button">Sell / Find Buyers</button>
+        </div>
+        <div class="results-heading">
+          <div>
+            <h2 id="resultsTitle">Available bulk materials</h2>
+            <p id="bulkCount">Loading marketplace…</p>
+          </div>
+          <a class="btn secondary" href="bulk-listing.html">+ List Material</a>
+        </div>
+        <div class="bulk-grid" id="bulkCards"></div>
+        <div class="empty-state" id="bulkEmpty" hidden>
+          <div class="empty-icon">♻</div>
+          <h3>No matching posts found</h3>
+          <p>Try changing the filters or publish a new listing or requirement.</p>
+          <a class="btn primary" href="bulk-listing.html">List Bulk Material</a>
+        </div>
+      </section>
+    </section>
+  </main>
+
+ 
+<!-- SECOND LIFE AI - PREMIUM FOOTER -->
+<footer class="sl-footer">
+
+  <div class="sl-footer-main">
+
+    <!-- Brand and description -->
+    <div class="sl-footer-brand">
+
+      <a class="sl-footer-logo" href="index.html">
+        <span class="sl-footer-logo-icon">S</span>
+        <span>
+          Second Life <span class="sl-footer-green">AI</span>
+          <small>REUSE. RESELL. REIMAGINE.</small>
+        </span>
+      </a>
+
+      <p>
+        Give useful products a second life. Discover reusable items,
+        connect with sellers and turn surplus into opportunity.
+      </p>
+
+      <a href="browse.html" class="sl-footer-cta">
+        Explore Marketplace <span>→</span>
+      </a>
+
+    </div>
+
+    <!-- Explore links -->
+    <div class="sl-footer-column">
+      <h3>Explore</h3>
+      <a href="browse.html">Marketplace</a>
+      <a href="bulk-marketplace.html">Bulk Marketplace</a>
+      <a href="matching.html">AI Matching</a>
+      <a href="offers.html">Make an Offer</a>
+    </div>
+
+    <!-- Marketplace links -->
+    <div class="sl-footer-column">
+      <h3>Marketplace</h3>
+      <a href="add-listing.html">Sell an Item</a>
+      <a href="saved.html">Saved Products</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">My Profile</a>
+    </div>
+
+    <!-- Account links -->
+    <div class="sl-footer-column">
+      <h3>Your Account</h3>
+      <a href="login.html">Log In</a>
+      <a href="signup.html">Create Account</a>
+      <a href="notifications.html">Notifications</a>
+      <a href="messages.html">Messages</a>
+    </div>
+
+  </div>
+
+  <!-- Bottom footer -->
+  <div class="sl-footer-bottom">
+
+    <p>
+      © 2026 Second Life AI. All rights reserved.
+    </p>
+
+    <p class="sl-footer-tagline">
+      Built for a more circular future <span>↗</span>
+    </p>
+
+    <a href="index.html" class="sl-footer-back-top">
+      Back to top ↑
+    </a>
+
+  </div>
+
+</footer>
+
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/bulk.js"></script>
+</body>
+</html>

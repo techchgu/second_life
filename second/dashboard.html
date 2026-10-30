@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Manage your listings, saved products and marketplace activity on Second Life AI.">
+
+  <title>My Dashboard | Second Life AI</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="dashboard-page">
+
+  <!-- HEADER -->
+  <header class="dashboard-navbar">
+    <a href="index.html" class="dashboard-brand">
+      <span class="dashboard-brand-icon">S</span>
+      <span class="dashboard-brand-name">
+        Second Life <span>AI</span>
+        <small>MARKETPLACE</small>
+      </span>
+    </a>
+
+    <nav class="dashboard-nav">
+      <a href="index.html">Home</a>
+      <a href="browse.html">Marketplace</a>
+      <a href="matching.html">AI Matching</a>
+      <a href="offers.html">Offers</a>
+      <a href="dashboard.html" class="active">Dashboard</a>
+    </nav>
+
+    <div class="dashboard-nav-actions">
+      <a href="browse.html" class="dashboard-login-btn">Browse</a>
+      <a href="add-listing.html" class="dashboard-add-btn">+ Add Listing</a>
+    </div>
+  </header>
+
+  <!-- MAIN DASHBOARD -->
+  <main class="dashboard-container">
+
+    <!-- WELCOME -->
+    <section class="dashboard-welcome">
+      <div>
+        <span class="dashboard-eyebrow">YOUR ACCOUNT</span>
+        <h1 id="welcomeTitle">My Dashboard</h1>
+        <p>Manage your listings, saved products and marketplace activity.</p>
+      </div>
+
+      <a href="add-listing.html" class="dashboard-add-btn welcome-add-btn">
+        + Sell an Item
+      </a>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats-grid" aria-label="Account statistics">
+
+      <article class="stat-card stat-green">
+        <div class="stat-top">
+          <span class="stat-label">My Listings</span>
+          <span class="stat-icon">▤</span>
+        </div>
+        <strong id="statListings">0</strong>
+        <p>Products you have listed</p>
+      </article>
+
+      <article class="stat-card">
+        <div class="stat-top">
+          <span class="stat-label">Saved Products</span>
+          <span class="stat-icon">♡</span>
+        </div>
+        <strong id="statSaved">0</strong>
+        <p>Items saved for later</p>
+      </article>
+
+      <article class="stat-card">
+        <div class="stat-top">
+          <span class="stat-label">Messages</span>
+          <span class="stat-icon">✉</span>
+        </div>
+        <strong id="statMessages">0</strong>
+        <p>Your marketplace enquiries</p>
+      </article>
+
+      <article class="stat-card">
+        <div class="stat-top">
+          <span class="stat-label">Notifications</span>
+          <span class="stat-icon">♧</span>
+        </div>
+        <strong id="statNotifications">0</strong>
+        <p>Your activity updates</p>
+      </article>
+
+    </section>
+
+    <!-- QUICK ACTIONS -->
+    <section class="dashboard-section">
+      <div class="dashboard-section-heading">
+        <div>
+          <span class="dashboard-eyebrow">QUICK ACCESS</span>
+          <h2>Manage your activity</h2>
+          <p>Everything you need to use the marketplace.</p>
+        </div>
+      </div>
+
+      <div class="dashboard-links">
+
+        <a class="dashboard-link" href="add-listing.html">
+          <span class="dashboard-link-icon green-icon">＋</span>
+          <span class="dashboard-link-content">
+            <strong>Add a Listing</strong>
+            <small>List an item for reuse.</small>
+          </span>
+          <span class="dashboard-arrow">↗</span>
+        </a>
+
+        <a class="dashboard-link" href="matching.html">
+          <span class="dashboard-link-icon purple-icon">✦</span>
+          <span class="dashboard-link-content">
+            <strong>AI Matching</strong>
+            <small>Discover products that fit your needs.</small>
+          </span>
+          <span class="dashboard-arrow">↗</span>
+        </a>
+
+        <a class="dashboard-link" href="messages.html">
+          <span class="dashboard-link-icon blue-icon">✉</span>
+          <span class="dashboard-link-content">
+            <strong>Messages</strong>
+            <small>View your marketplace enquiries.</small>
+          </span>
+          <span class="dashboard-arrow">↗</span>
+        </a>
+
+        <a class="dashboard-link" href="saved.html">
+          <span class="dashboard-link-icon pink-icon">♡</span>
+          <span class="dashboard-link-content">
+            <strong>Saved Products</strong>
+            <small>Revisit your bookmarked items.</small>
+          </span>
+          <span class="dashboard-arrow">↗</span>
+        </a>
+
+        <a class="dashboard-link" href="notifications.html">
+          <span class="dashboard-link-icon orange-icon">♧</span>
+          <span class="dashboard-link-content">
+            <strong>Notifications</strong>
+            <small>Review your latest updates.</small>
+          </span>
+          <span class="dashboard-arrow">↗</span>
+        </a>
+
+        <a class="dashboard-link" href="profile.html">
+          <span class="dashboard-link-icon gray-icon">⚙</span>
+          <span class="dashboard-link-content">
+            <strong>My Profile</strong>
+            <small>Manage your account details.</small>
+          </span>
+          <span class="dashboard-arrow">↗</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- RECENT LISTINGS -->
+    <section class="dashboard-section recent-section">
+      <div class="recent-heading">
+        <div>
+          <span class="dashboard-eyebrow">YOUR PRODUCTS</span>
+          <h2>My Recent Listings</h2>
+          <p>Keep track of the items you have listed.</p>
+        </div>
+
+        <a href="add-listing.html" class="view-all-link">
+          + Add Listing
+        </a>
+      </div>
+
+      <div id="dashboardListings" class="product-grid dashboard-product-grid"></div>
+
+      <div id="dashboardEmpty" class="dashboard-empty" hidden>
+        <div class="dashboard-empty-icon">▤</div>
+        <h3>No listings yet</h3>
+        <p>Your listed products will appear here when available.</p>
+        <a href="add-listing.html" class="dashboard-add-btn">
+          Create Your First Listing
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+<!-- SECOND LIFE AI - PREMIUM FOOTER -->
+<footer class="sl-footer">
+
+  <div class="sl-footer-main">
+
+    <!-- Brand and description -->
+    <div class="sl-footer-brand">
+
+      <a class="sl-footer-logo" href="index.html">
+        <span class="sl-footer-logo-icon">S</span>
+        <span>
+          Second Life <span class="sl-footer-green">AI</span>
+          <small>REUSE. RESELL. REIMAGINE.</small>
+        </span>
+      </a>
+
+      <p>
+        Give useful products a second life. Discover reusable items,
+        connect with sellers and turn surplus into opportunity.
+      </p>
+
+      <a href="browse.html" class="sl-footer-cta">
+        Explore Marketplace <span>→</span>
+      </a>
+
+    </div>
+
+    <!-- Explore links -->
+    <div class="sl-footer-column">
+      <h3>Explore</h3>
+      <a href="browse.html">Marketplace</a>
+      <a href="bulk-marketplace.html">Bulk Marketplace</a>
+      <a href="matching.html">AI Matching</a>
+      <a href="offers.html">Make an Offer</a>
+    </div>
+
+    <!-- Marketplace links -->
+    <div class="sl-footer-column">
+      <h3>Marketplace</h3>
+      <a href="add-listing.html">Sell an Item</a>
+      <a href="saved.html">Saved Products</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">My Profile</a>
+    </div>
+
+    <!-- Account links -->
+    <div class="sl-footer-column">
+      <h3>Your Account</h3>
+      <a href="login.html">Log In</a>
+      <a href="signup.html">Create Account</a>
+      <a href="notifications.html">Notifications</a>
+      <a href="messages.html">Messages</a>
+    </div>
+
+  </div>
+
+  <!-- Bottom footer -->
+  <div class="sl-footer-bottom">
+
+    <p>
+      © 2026 Second Life AI. All rights reserved.
+    </p>
+
+    <p class="sl-footer-tagline">
+      Built for a more circular future <span>↗</span>
+    </p>
+
+    <a href="index.html" class="sl-footer-back-top">
+      Back to top ↑
+    </a>
+
+  </div>
+
+</footer>
+
+  <!-- EXISTING JAVASCRIPT -->
+  <script src="js/data.js"></script>
+  <script src="js/marketplace.js"></script>
+  <script src="js/dashboard.js"></script>
+
+</body>
+</html>

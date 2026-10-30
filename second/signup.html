@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#078260">
+
+  <title>Create Account | Second Life AI</title>
+  <meta name="description" content="Create your Second Life AI marketplace account.">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/auth.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body class="auth-page">
+
+  <!-- SAME NAVBAR AS MARKETPLACE -->
+  <header class="site-header auth-header">
+    <div class="container header-inner auth-header-inner">
+
+      <a class="brand auth-brand" href="index.html">
+        <span class="brand-mark">S</span>
+        <span class="auth-brand-text">
+          Second Life AI
+          <small>REUSE. RESELL. REIMAGINE.</small>
+        </span>
+      </a>
+
+      <form class="auth-nav-search" action="browse.html" method="get">
+        <span class="auth-search-icon" aria-hidden="true">⌕</span>
+        <input
+          type="search"
+          name="q"
+          placeholder="Search products, categories..."
+          aria-label="Search products"
+        >
+        <button type="submit">Search</button>
+      </form>
+
+      <nav class="auth-main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="browse.html">Marketplace</a>
+        <a href="bulk-marketplace.html">Bulk Marketplace</a>
+        <a href="matching.html">AI Matching</a>
+        <a href="offers.html">Offers</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+
+      <div class="auth-nav-actions">
+        <a href="login.html" class="auth-login-nav">Log in</a>
+        <a
+          href="signup.html"
+          class="auth-join-nav active"
+          aria-current="page"
+        >Join Free ↗</a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="auth-wrapper">
+
+    <!-- SIGNUP FORM -->
+    <section class="auth-card">
+
+      <a href="index.html" class="auth-logo" aria-label="Second Life AI home">S</a>
+
+      <span class="auth-eyebrow">
+        <span class="auth-eyebrow-dot"></span>
+        JOIN THE COMMUNITY
+      </span>
+
+      <h1>Create your <span>account.</span></h1>
+
+      <p class="auth-description">
+        Join Second Life AI to discover, buy, sell and reuse useful products.
+      </p>
+
+      <form id="signupForm" class="auth-form">
+
+        <label for="signupName">Full name</label>
+        <input
+          class="field"
+          id="signupName"
+          name="name"
+          type="text"
+          autocomplete="name"
+          placeholder="Your full name"
+          minlength="2"
+          maxlength="80"
+          required
+        >
+
+        <label for="signupEmail">Email address</label>
+        <input
+          class="field"
+          id="signupEmail"
+          name="email"
+          type="email"
+          autocomplete="email"
+          placeholder="you@example.com"
+          maxlength="254"
+          required
+        >
+
+        <label for="signupPassword">Password</label>
+        <div class="auth-password-wrap">
+          <input
+            class="field"
+            id="signupPassword"
+            name="password"
+            type="password"
+            autocomplete="new-password"
+            placeholder="At least 8 characters"
+            minlength="8"
+            required
+          >
+          <button
+            type="button"
+            class="auth-password-toggle"
+            data-toggle-password="signupPassword"
+            aria-label="Show password"
+            aria-pressed="false"
+          >Show</button>
+        </div>
+
+        <label for="signupConfirm">Confirm password</label>
+        <div class="auth-password-wrap">
+          <input
+            class="field"
+            id="signupConfirm"
+            name="confirmPassword"
+            type="password"
+            autocomplete="new-password"
+            placeholder="Enter password again"
+            minlength="8"
+            required
+          >
+          <button
+            type="button"
+            class="auth-password-toggle"
+            data-toggle-password="signupConfirm"
+            aria-label="Show confirm password"
+            aria-pressed="false"
+          >Show</button>
+        </div>
+
+        <label class="terms-option" for="acceptTerms">
+          <input id="acceptTerms" name="acceptTerms" type="checkbox" required>
+          <span>
+            I agree to the marketplace terms.
+          </span>
+        </label>
+
+        <button
+          class="auth-submit-btn"
+          id="signupButton"
+          type="submit"
+        >
+          Create Account <span aria-hidden="true">→</span>
+        </button>
+
+        <p
+          id="authMessage"
+          class="auth-message"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+      </form>
+
+      <div class="auth-divider">
+        <span>ALREADY A MEMBER?</span>
+      </div>
+
+      <p class="auth-switch">
+        Already registered?
+        <a href="login.html">Log in</a>
+      </p>
+
+      <p class="auth-note">
+        Demo accounts are stored locally in this browser.
+        Do not use a real or reused password.
+      </p>
+
+    </section>
+
+    <!-- RIGHT SIDE PROMO -->
+    <aside class="auth-side-content">
+
+      <span class="auth-side-label">THE CIRCULAR MARKETPLACE</span>
+
+      <h2>Join a community that gives products <span>a second life.</span></h2>
+
+      <p>
+        Discover useful items, connect with people and help reduce waste
+        through smarter reuse.
+      </p>
+
+      <div class="auth-benefits">
+        <div><span>✓</span> Explore reusable products</div>
+        <div><span>✓</span> List items you no longer need</div>
+        <div><span>✓</span> Find better-fit alternatives</div>
+      </div>
+
+      <div class="auth-decoration" aria-hidden="true">
+        <div class="auth-decoration-circle"></div>
+        <div class="auth-decoration-card">
+          <span class="auth-decoration-check">✓</span>
+          <strong>Welcome aboard!</strong>
+          <small>Reuse more. Waste less.</small>
+        </div>
+      </div>
+
+    </aside>
+
+  </main>
+
+  
+<!-- SECOND LIFE AI - PREMIUM FOOTER -->
+<footer class="sl-footer">
+
+  <div class="sl-footer-main">
+
+    <!-- Brand and description -->
+    <div class="sl-footer-brand">
+
+      <a class="sl-footer-logo" href="index.html">
+        <span class="sl-footer-logo-icon">S</span>
+        <span>
+          Second Life <span class="sl-footer-green">AI</span>
+          <small>REUSE. RESELL. REIMAGINE.</small>
+        </span>
+      </a>
+
+      <p>
+        Give useful products a second life. Discover reusable items,
+        connect with sellers and turn surplus into opportunity.
+      </p>
+
+      <a href="browse.html" class="sl-footer-cta">
+        Explore Marketplace <span>→</span>
+      </a>
+
+    </div>
+
+    <!-- Explore links -->
+    <div class="sl-footer-column">
+      <h3>Explore</h3>
+      <a href="browse.html">Marketplace</a>
+      <a href="bulk-marketplace.html">Bulk Marketplace</a>
+      <a href="matching.html">AI Matching</a>
+      <a href="offers.html">Make an Offer</a>
+    </div>
+
+    <!-- Marketplace links -->
+    <div class="sl-footer-column">
+      <h3>Marketplace</h3>
+      <a href="add-listing.html">Sell an Item</a>
+      <a href="saved.html">Saved Products</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="profile.html">My Profile</a>
+    </div>
+
+    <!-- Account links -->
+    <div class="sl-footer-column">
+      <h3>Your Account</h3>
+      <a href="login.html">Log In</a>
+      <a href="signup.html">Create Account</a>
+      <a href="notifications.html">Notifications</a>
+      <a href="messages.html">Messages</a>
+    </div>
+
+  </div>
+
+  <!-- Bottom footer -->
+  <div class="sl-footer-bottom">
+
+    <p>
+      © 2026 Second Life AI. All rights reserved.
+    </p>
+
+    <p class="sl-footer-tagline">
+      Built for a more circular future <span>↗</span>
+    </p>
+
+    <a href="index.html" class="sl-footer-back-top">
+      Back to top ↑
+    </a>
+
+  </div>
+
+</footer>
+
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

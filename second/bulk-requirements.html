@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Post Bulk Requirement | Second Life AI</title>
+  <link rel="stylesheet" href="css/bulk.css">
+</head>
+<body data-page="requirement-form">
+  <header class="topbar">
+    <a class="brand" href="index.html">♻ Second Life AI</a>
+    <nav>
+      <a href="bulk-marketplace.html">Bulk Marketplace</a>
+      <a href="dashboard.html">Dashboard</a>
+    </nav>
+  </header>
+
+  <main class="form-container">
+    <a class="back-link" href="bulk-marketplace.html">← Back to marketplace</a>
+    <section class="panel form-panel">
+      <span class="eyebrow">BUYER PORTAL</span>
+      <h1>Post Bulk Requirement</h1>
+      <p>Tell suppliers which raw materials your business needs.</p>
+
+      <form id="bulkRequirementForm">
+        <label>Material name *
+          <input name="name" required maxlength="120" placeholder="e.g. Aluminium scrap">
+        </label>
+
+        <div class="form-row">
+          <label>Category *
+            <select name="category" required>
+              <option value="">Choose category</option>
+              <option>Metals</option><option>Plastics</option>
+              <option>Paper</option><option>Electronics</option>
+              <option>Textiles</option><option>Wood</option>
+              <option>Industrial Components</option><option>Other</option>
+            </select>
+          </label>
+          <label>Condition *
+            <select name="condition" required>
+              <option value="">Choose condition</option>
+              <option>New</option><option>Reusable</option>
+              <option>Recycled</option><option>Surplus</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>Required quantity *
+            <input name="quantity" type="number" min="0.001" step="any" required>
+          </label>
+          <label>Unit *
+            <select name="unit" required>
+              <option>kg</option><option>tonnes</option><option>litres</option>
+              <option>pieces</option><option>metres</option><option>rolls</option>
+              <option>bags</option><option>pallets</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>Target price per unit (₹)
+            <input name="price" type="number" min="0" step="any">
+          </label>
+          <label>Total budget (₹)
+            <input name="budget" type="number" min="0" step="any">
+          </label>
+        </div>
+
+        <label>Quality / specifications *
+          <textarea name="specifications" rows="3" required maxlength="3000"></textarea>
+        </label>
+
+        <div class="form-row">
+          <label>Delivery location *
+            <input name="location" required maxlength="150" placeholder="City, state">
+          </label>
+          <label>Required delivery date
+            <input name="deliveryDate" type="date">
+          </label>
+        </div>
+
+        <div class="form-row">
+          <label>Company name *
+            <input name="company" required maxlength="150">
+          </label>
+          <label>Preferred contact method *
+            <select name="contactMethod" required>
+              <option value="platform">Platform inquiry</option>
+              <option value="email">Email after consent</option>
+              <option value="phone">Phone after consent</option>
+            </select>
+          </label>
+        </div>
+
+        <label>Additional requirements
+          <textarea name="additional" rows="3" maxlength="2000"></textarea>
+        </label>
+
+        <button class="btn primary full" type="submit">Post Requirement</button>
+        <p id="requirementFormMessage" class="form-message" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/bulk.js"></script>
+</body>
+</html>
